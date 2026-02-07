@@ -1,4 +1,6 @@
 """
+Anasmita Math
+
 Python mainly follows snake_case for variable and function names
 Ex: first_name, last_name, calculate_total()
 And PascalCase (also known as CamelCase) for class names
