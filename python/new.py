@@ -63,16 +63,31 @@
 #     rev=rev*10+digit
 #     n=n//10
 # print(rev)
-#### LIST ####
+
+#### LIST (Mutable) ####
 li=[5,6,[12,56],"Anasmita",(3,4)]
-print(li)
-print(li[0])
-li1=[3,4,5,6]
-li2=[7,8,9,10]
-print(li1+li2)
-print(li2*3)
-li1.append(12)
-li1.insert(1,6.7)
-print(li1)
-li1.append(li2)
-print(li1)
+# print(li)
+# print(li[0])
+# li1=[3,4,5,6]
+# li2=[7,8,9,10]
+# print(li1+li2)
+# print(li2*3)
+# li1.append(12)
+# li1.insert(1,6.7)
+# print(li1)
+# li1.append(li2)
+# print(li1)
+
+#### TUPLES ####
+t=(1, 2, [1, 2], (3, 4), "Annu", 7)
+print(t)
+print(t[3][1])
+'''Convert tuple to list'''
+li3=list(t)
+print(li3)
+tup=tuple("Anasmita")
+print(tup)
+tup1= (0, 1, 9, 7)
+tup2= ("Mango","Apple","Orange")
+tup3=tup1+tup2
+print(tup3)
