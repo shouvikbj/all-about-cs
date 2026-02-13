@@ -44,22 +44,35 @@
 # for i in range(10,30,3):
 #     print(i)
 # Version 3
-li=[12,45,23,56,89,73]
+#li=[12,45,23,56,89,73]
 #### One Process
 # for i in range(len(li)):
 #     print(li[i])
 #### Another Process
 # for item in li:
 #     print(item)
-for i in range(len(li)):
-    if(li[i]==89):
-        print(str(i)+ " => "+ str(li[i]))
+# for i in range(len(li)):
+#     if(li[i]==89):
+#         print(str(i)+ " => "+ str(li[i]))
 
 '''While Loop'''
-n=int(input("Enter a number: "))
-rev=0
-while(n!=0):
-    digit=n%10
-    rev=rev*10+digit
-    n=n//10
-print(rev)
+# n=int(input("Enter a number: "))
+# rev=0
+# while(n!=0):
+#     digit=n%10
+#     rev=rev*10+digit
+#     n=n//10
+# print(rev)
+#### LIST ####
+li=[5,6,[12,56],"Anasmita",(3,4)]
+print(li)
+print(li[0])
+li1=[3,4,5,6]
+li2=[7,8,9,10]
+print(li1+li2)
+print(li2*3)
+li1.append(12)
+li1.insert(1,6.7)
+print(li1)
+li1.append(li2)
+print(li1)
