@@ -170,3 +170,7 @@ Usecase of tuples:
 
 # li2 = [ item**2 for item in li if item%3==0 ]
 # print(li2)
+
+# formatted strings
+first_name = "Shouvik"
+print(f"My first name is {first_name}")
