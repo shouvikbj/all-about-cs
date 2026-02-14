@@ -48,10 +48,10 @@ which is then interpreted by the Python interpreter)
 
 ## Lists ## (mutable)
 
-# my_list = [1, 2, [1, 2], (1, 2), "Shouvik", 5]
+my_list = [1, 2, [1, 2], (1, 2), "Shouvik", 5]
 
-# print(my_list[4]) # Shouvik
-# print(my_list[-2]) # Shouvik
+print(my_list[4]) # Shouvik
+print(my_list[-2]) # Shouvik
 
 # print(my_list[2][1]) # 2
 
