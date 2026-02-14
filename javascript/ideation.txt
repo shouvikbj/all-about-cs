@@ -1,0 +1,26 @@
+CREATE  |
+READ    |
+UPDATE  | (Atomic Operation)
+DELETE  |
+--------|
+
+{ CRUD }
+
+{
+    A => Atomicity
+    C => Consistancy
+    I => Isolation
+    D => Durability (Non-volatile memory)
+}
+
+Instagram Reels:
+Post => CREATE
+Post description change => UPDATE
+Post deletion => DELETE
+Post view => READ
+Liking => (READ + CREATE + READ + READ)
+Comment => (READ + CREATE + READ + READ)
+Unlike => (READ + DELETE)
+Message Change Reaction => (READ + UPDATE + READ + READ)
+[ig: /@shouvikbajpayee] -->
+[ig: /@anasmita]
