@@ -1,4 +1,4 @@
-// ||Varibles|| \\
+// ||VARIABLES|| \\
 // Using Var
 var age=20;
 var age=24;
@@ -21,3 +21,51 @@ let total = num1 + num2;
 console.log(total);
 let sub = num1 - num2;
 console.log(sub);
+
+// ||DATATYPES|| \\
+/////////////////// Primitive Datatypes (7) ///////////////////
+/*Number*/
+let age=21;
+console.log(age);
+console.log(`The type of age is: ${typeof age}`);
+/*String*/
+let hobby="singing";
+console.log(hobby);
+console.log(`the type of hobby is: ${typeof hobby}`);
+/*Boolean*/
+let isEven=true;
+console.log(isEven);
+console.log(`The type of isEven is: ${typeof isEven}`);
+/*Undefined*/
+let x;
+console.log(x);
+console.log(`The type of x is: ${typeof x}`);
+/*Null*/
+let y=null;
+console.log(`The type of y is: ${typeof y}`);
+/*BigInt*/
+let z=BigInt("239005");
+console.log(z);
+console.log(`The type of y is: ${typeof z}`);
+/*Symbol*/
+let s=Symbol("Hello!");
+console.log(s);
+console.log(`The type of y is: ${typeof s}`);
+/////////////////// Non Primitive Datatype ////////////////////
+/*Objects*/
+const person={
+    name:"Anasmita Math",
+    age:20,
+    city:"Panskura",
+    details:{
+        mail:"smita225@gmail.com",
+        contact:['1238567894','9876543217']
+    }
+};
+console.log(person);
+console.log(typeof person);
+//console.log(person.name);
+console.log(person["name"]);
+console.log(person.city);
+console.log(person.details.mail);
+console.log(person.details.contact[1]);
