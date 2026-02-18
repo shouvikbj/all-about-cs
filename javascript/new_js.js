@@ -114,19 +114,39 @@
 // let Fruit=fru1.concat(fru2);
 // console.log(Fruit);
 
-// || Loops || \\
-let cities=["Kolkata","Delhi","Bangalore","Pune"];
-for(let i=0;i<cities.length;i++)
-{
-    console.log(`${JSON.stringify(cities[i])} is at index ${i}`);
+// // || Loops || \\
+// let cities=["Kolkata","Delhi","Bangalore","Pune"];
+// for(let i=0;i<cities.length;i++)
+// {
+//     console.log(`${JSON.stringify(cities[i])} is at index ${i}`);
+// }
+// const person={
+//     name:"Anasmita Math",
+//     age:20
+// }
+// console.log(person);
+// console.log(JSON.stringify(person));
+// while (cities.length > 0) {
+//     const city = cities.pop();
+//     console.log(`Removed ${JSON.stringify(city)} from the array. Remaining cities: ${JSON.stringify(cities)}`);
+// }
+// || Functions || \\
+function func(user_name) {
+   console.log(`Hello, ${user_name}!`);
 }
-const person={
-    name:"Anasmita Math",
-    age:20
+func("Anasmita");
+func("Math");
+func("Student");
+const checkAge = (age) => {
+    if (age < 18) {
+        return "You are a minor.";
+    } 
+    else if (age >= 18 && age < 60) {
+        return "You are an adult.";
+    } else {
+        return "You are a senior citizen.";
+    }
 }
-console.log(person);
-console.log(JSON.stringify(person));
-while (cities.length > 0) {
-    const city = cities.pop();
-    console.log(`Removed ${JSON.stringify(city)} from the array. Remaining cities: ${JSON.stringify(cities)}`);
-}
+console.log(checkAge(20)); 
+console.log(checkAge(12));
+console.log(checkAge(75));
