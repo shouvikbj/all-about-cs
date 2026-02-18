@@ -87,29 +87,46 @@
 //     console.log("This is Zero");
 
 // // || Arrays || \\
-let arr=["Apple","Mango","Grapes",(12,23,45),{Marks:89}];
-console.log(arr);
-console.log(arr.length);
-console.log(arr[2]);
-console.log(arr[5]);
-arr[0]="orange";
-console.log(arr);
-for(let i=0;i<arr.length;i++)
-    console.log(arr[i]);
+// let arr=["Apple","Mango","Grapes",(12,23,45),{Marks:89}];
+// console.log(arr);
+// console.log(arr.length);
+// console.log(arr[2]);
+// console.log(arr[5]);
+// arr[0]="orange";
+// console.log(arr);
+// for(let i=0;i<arr.length;i++)
+//     console.log(arr[i]);
+// let cities=["Kolkata","Delhi","Bangalore","Pune"];
+// for(let city of cities){
+//     console.log(city);
+//     console.log(city.toUpperCase());
+// }
+// //Array Methods
+// cities.push("Chennai");
+// console.log(cities);
+// cities.pop();
+// console.log(cities);
+// cities.unshift("Haldia");
+// console.log(cities);
+// //Join multiple arrays
+// let fru1=["Watermelon","Banana","Pear"];
+// let fru2=["Strawberry","Cherry","Lychee"];
+// let Fruit=fru1.concat(fru2);
+// console.log(Fruit);
+
+// || Loops || \\
 let cities=["Kolkata","Delhi","Bangalore","Pune"];
-for(let city of cities){
-    console.log(city);
-    console.log(city.toUpperCase());
+for(let i=0;i<cities.length;i++)
+{
+    console.log(`${JSON.stringify(cities[i])} is at index ${i}`);
 }
-//Array Methods
-cities.push("Chennai");
-console.log(cities);
-cities.pop();
-console.log(cities);
-cities.unshift("Haldia");
-console.log(cities);
-//Join multiple arrays
-let fru1=["Watermelon","Banana","Pear"];
-let fru2=["Strawberry","Cherry","Lychee"];
-let Fruit=fru1.concat(fru2);
-console.log(Fruit);
+const person={
+    name:"Anasmita Math",
+    age:20
+}
+console.log(person);
+console.log(JSON.stringify(person));
+while (cities.length > 0) {
+    const city = cities.pop();
+    console.log(`Removed ${JSON.stringify(city)} from the array. Remaining cities: ${JSON.stringify(cities)}`);
+}
