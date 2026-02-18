@@ -70,19 +70,46 @@
 // console.log(person.details.mail);
 // console.log(person.details.contact[1]);
 
-// || Conditional Statements || \\
-// Odd-Even
-let x=35;
-if(x%2==0)
-    console.log("The number is Even");
-else
-    console.log("The number is Odd");
-// Negative-Positive Number
-let y=-24;
-if(y>0)
-    console.log("The number is Positive");
-else if(y<0)
-    console.log("The number is Negative");
-else
-    console.log("This is Zero");
+// // || Conditional Statements || \\
+// // Odd-Even
+// let x=35;
+// if(x%2==0)
+//     console.log("The number is Even");
+// else
+//     console.log("The number is Odd");
+// // Negative-Positive Number
+// let y=-24;
+// if(y>0)
+//     console.log("The number is Positive");
+// else if(y<0)
+//     console.log("The number is Negative");
+// else
+//     console.log("This is Zero");
 
+// // || Arrays || \\
+let arr=["Apple","Mango","Grapes",(12,23,45),{Marks:89}];
+console.log(arr);
+console.log(arr.length);
+console.log(arr[2]);
+console.log(arr[5]);
+arr[0]="orange";
+console.log(arr);
+for(let i=0;i<arr.length;i++)
+    console.log(arr[i]);
+let cities=["Kolkata","Delhi","Bangalore","Pune"];
+for(let city of cities){
+    console.log(city);
+    console.log(city.toUpperCase());
+}
+//Array Methods
+cities.push("Chennai");
+console.log(cities);
+cities.pop();
+console.log(cities);
+cities.unshift("Haldia");
+console.log(cities);
+//Join multiple arrays
+let fru1=["Watermelon","Banana","Pear"];
+let fru2=["Strawberry","Cherry","Lychee"];
+let Fruit=fru1.concat(fru2);
+console.log(Fruit);
