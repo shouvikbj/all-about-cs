@@ -150,6 +150,10 @@ const fruits = ["apple", "banana", "orange", "grape", 0, true, null, undefined, 
 //     console.log(`Hello, ${user_name}!`);
 // })("Shouvik"); // call the arrow function with an argument
 
+(() => {
+    console.log("This is an arrow function without parameters.");
+})(); // call the arrow function without parameters
+
 // most commonly used arrow function syntax
 // const greet = (user_name) => {
 //     console.log(`Hello, ${user_name}!`);

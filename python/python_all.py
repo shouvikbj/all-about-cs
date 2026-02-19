@@ -48,10 +48,10 @@ which is then interpreted by the Python interpreter)
 
 ## Lists ## (mutable)
 
-my_list = [1, 2, [1, 2], (1, 2), "Shouvik", 5]
+# my_list = [1, 2, [1, 2], (1, 2), "Shouvik", 5]
 
-print(my_list[4]) # Shouvik
-print(my_list[-2]) # Shouvik
+# print(my_list[4]) # Shouvik
+# print(my_list[-2]) # Shouvik
 
 # print(my_list[2][1]) # 2
 
@@ -172,5 +172,14 @@ Usecase of tuples:
 # print(li2)
 
 # formatted strings
-first_name = "Shouvik"
-print(f"My first name is {first_name}")
+# first_name = "Shouvik"
+# print(f"My first name is {first_name}")
+
+def first(fun):
+    return fun()
+
+@first
+def inner():
+    print(f"This is the inner function.")
+    
+# first(inner)
