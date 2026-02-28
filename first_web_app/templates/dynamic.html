@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page</title>
+</head>
+<body>
+    <h1>Welcome to the Dynamic Page!</h1>
+
+    {% if first_n and last_n %}
+        <p>Hello, {{ first_n }} {{ last_n }}!</p>
+    {% else %}
+        <p>No user name found!</p>
+    {% endif %}
+
+    {% if u_email %}
+        <p>Email: {{ u_email }}</p>
+    {% else %}
+        <p>No user email found!</p>
+    {% endif %}
+
+    {% if u_email %}
+        <input type="text" value="{{ u_email }}" style="width: 200px;">
+    {% else %}
+        <input type="text" value="No email" disabled>
+    {% endif %}
+
+    {% for fruit in fruits %}
+        <h3 style="color: brown;">{{ fruit }}</h3>
+    {% endfor %}
+</body>
+</html>
