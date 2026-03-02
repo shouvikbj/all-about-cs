@@ -10,9 +10,15 @@
     <div class="card">
         <img src="/static/images/parrot.jpeg" alt="Picture" class="card-img">
         <div class="Details">
-            <h1>Anasmita Math</h1>
-            <h3>CSE Student at HIT</h3>
+            <!--  *** NAME ***  -->
+            <h1 style="color:deeppink"> {{ first_n }} {{ last_n }}</h1>
+
+            <!-- *** DEPARTMENT AND COLLEGE ***  -->
+            <h2> {{ dept_n }} STUDENT AT {{ college_n }} </h2>
             <button>See Profile</button>
+            {% for fruit in fruits %}
+                <h3 style="color:blueviolet"> {{ fruit }}</h3>
+            {% endfor %}
         </div>
     </div>
 </body>
