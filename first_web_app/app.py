@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = '2iwudgo8173erbx98ne9udj@$##%^UVbo&%&$&V'
@@ -34,7 +34,6 @@ def dynamic_with_age(email):
 
 @app.route('/details/<first_name>/<last_name>/dept/<dept_name>/college/<college_name>')
 def details(first_name,last_name,dept_name,college_name):
-    # TODO: provide your implementation
     fruits = ["apple", "banana", "cherry", "date", "elderberry"]
     cap_fruits = [fruit.capitalize() for fruit in fruits]
     return render_template(
@@ -45,6 +44,35 @@ def details(first_name,last_name,dept_name,college_name):
         college_n=college_name.upper(),
         fruits=cap_fruits
     )
+
+# Types of requests in HTTP
+"""
+    GET: Get data from Database using server
+    POST: Create new entry into Database using server
+    UPDATE: Update existing entry into Database using server
+    PUT: Update part of existing entry into Database using server
+    DELETE: Delete existing entry from Database using server
+"""
+
+# TODO:
+"""
+1. if email id is available, must redirect user to the proper email based route.
+2. else redirect user to name base route
+3. print password in each case
+"""
+@app.route('/form', methods=["GET", "POST"])
+def form():
+    if request.method == "GET":
+        return render_template("form.html")
+    elif request.method == "POST":
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
+        user_password = request.form.get("user_password")
+        print(f"Password: {user_password}")
+        return redirect(f"/{first_name}/{last_name}")
+    else:
+        return "Requested method not allowed!"
+    
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
