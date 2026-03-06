@@ -68,8 +68,12 @@ def form():
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
         user_password = request.form.get("user_password")
+        user_email=request.form.get("user_email")
         print(f"Password: {user_password}")
-        return redirect(f"/{first_name}/{last_name}")
+        if user_email:
+            return redirect(f"/user/{user_email}")
+        else:
+            return redirect(f"/{first_name}/{last_name}")
     else:
         return "Requested method not allowed!"
     
