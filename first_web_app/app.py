@@ -76,7 +76,17 @@ def form():
             return redirect(f"/{first_name}/{last_name}")
     else:
         return "Requested method not allowed!"
-    
+@app.route('/student',methods=["GET","POST"])
+def student():
+    if request.method=="GET":
+        return render_template("details.html")
+    elif request.method=="POST":
+        first_name=request.details.get("first_name")
+        last_name=request.details.get("last_name")
+        user_dept=request.details.get("user_dept")
+        user_colg=request.details.get("user_colg")
+        return redirect(f"/details/{first_name}/{last_name}/dept/{user_dept}/college/{user_colg}")
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
