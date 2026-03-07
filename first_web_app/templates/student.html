@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+  </head>
+  <body>
+    <h2>Enter Student Details</h2>
+    <form action="/student" method="post">
+      <label for="first-name">First Name *</label>
+      <br />
+      <input
+        id="first-name"
+        type="text"
+        placeholder="Enter your first name"
+        name="first_name"
+        required
+      />
+      <br />
+      <br />
+      <label for="last-name">Last Name *</label>
+      <br />
+      <input
+        id="last-name"
+        type="text"
+        placeholder="Enter your last name"
+        name="last_name"
+        required
+      />
+      <br />
+      <br />
+      <label for="dept">Department Name *</label>
+      <br />
+      <input
+        id="dept-name"
+        type="text"
+        placeholder="Enter your dept name"
+        name="user_department"
+        required
+      />
+      <br />
+      <br />
+      <label for="college">College Name *</label>
+      <br />
+      <input
+        id="colg-name"
+        type="text"
+        placeholder="Enter your college name"
+        name="user_college"
+        required
+      />
+      <br />
+      <br />
+      <button type="reset">Reset form</button>
+      <button type="submit">Enter Data</button>
+    </form>
+  </body>
+</html>
