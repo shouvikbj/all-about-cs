@@ -23,7 +23,7 @@ document.getElementById("predict-btn").addEventListener("click", async () => {
   const formData = document.getElementById("diabetes-form");
 
   // Send the data to the server using fetch
-  await fetch("http://localhost:5001/predict/diabetes", {
+  await fetch("/predict/diabetes", {
     method: "POST",
     body: new FormData(formData),
   })
@@ -35,4 +35,11 @@ document.getElementById("predict-btn").addEventListener("click", async () => {
       result_view.innerText = `Result: ${result.result}`;
       alert(result.result);
     });
+
+  // const response = await fetch("/predict/diabetes", {
+  //       method: "POST",
+  //       body: new FormData(formData)
+  //   });
+  //   const result = await response.json();
+  //   document.getElementById("result-view").innerText = result.result;
 });

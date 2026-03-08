@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import pandas as pd
 import pickle
-
+# Load the trained ML model
+# with open("./static/models/diabetes.pkl", "rb") as model:
+#     loaded_model = pickle.load(model)
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = '2iwudgo8173erbx98ne9udj@$##%^UVbo&%&$&V'
 
@@ -89,7 +91,8 @@ def student():
         user_department=request.form.get("user_department")
         user_college=request.form.get("user_college")
         return redirect(f"/details/{first_name}/{last_name}/dept/{user_department}/college/{user_college}")
-
+# with open("./static/models/diabetes.pkl", "rb") as model:
+#     loaded_model = pickle.load(model)
 @app.route('/predict')
 def predict():
     return render_template("predict.html")
@@ -97,14 +100,14 @@ def predict():
 # API endpoint for prediction
 @app.route('/predict/diabetes', methods=["POST"])
 def predict_diabetes():
-    pregnancies = request.form.get("pregnancies")
-    glucose = request.form.get("glucose")
-    blood_pressure = request.form.get("blood_pressure")
-    skin_thickness = request.form.get("skin_thickness")
-    insulin = request.form.get("insulin")
-    bmi = request.form.get("bmi")
-    dpf = request.form.get("dpf")
-    age = request.form.get("age")
+    pregnancies = float(request.form.get("pregnancies"))
+    glucose = float(request.form.get("glucose"))
+    blood_pressure = float(request.form.get("blood_pressure"))
+    skin_thickness = float(request.form.get("skin_thickness"))
+    insulin = float(request.form.get("insulin"))
+    bmi = float(request.form.get("bmi"))
+    dpf = float(request.form.get("dpf"))
+    age = float(request.form.get("age"))
     # Feature Names 
     feature_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
     input_data = (
@@ -118,11 +121,11 @@ def predict_diabetes():
         age
     )
     input_df = pd.DataFrame([input_data], columns=feature_names)
-    loaded_model = None
+    # loaded_model = None
     with open("./static/models/diabetes.pkl", "rb") as model:
         loaded_model = pickle.load(model)
     prediction = loaded_model.predict(input_df)
-    if prediction[0]:
+    if prediction[0]==1:
         result = "The model predicts that you have diabetes."
         return jsonify({"result": result})
     else:
