@@ -1,14 +1,19 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 import pickle
-# Load the trained ML model
-# with open("./static/models/diabetes.pkl", "rb") as model:
-#     loaded_model = pickle.load(model)
+
+
 app = Flask(__name__, static_url_path='/static')
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = '2iwudgo8173erbx98ne9udj@$##%^UVbo&%&$&V'
 
 
 fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+
+# Load the trained ML model at the start of the application
+loaded_model = pickle.load(open("./static/models/diabetes_model.pkl","rb"))
+loaded_scaler = pickle.load(open("./static/models/scaler.pkl","rb"))
 
 
 @app.route('/')
@@ -91,8 +96,7 @@ def student():
         user_department=request.form.get("user_department")
         user_college=request.form.get("user_college")
         return redirect(f"/details/{first_name}/{last_name}/dept/{user_department}/college/{user_college}")
-# with open("./static/models/diabetes.pkl", "rb") as model:
-#     loaded_model = pickle.load(model)
+
 @app.route('/predict')
 def predict():
     return render_template("predict.html")
@@ -110,7 +114,7 @@ def predict_diabetes():
     age = float(request.form.get("age"))
     # Feature Names 
     feature_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
-    input_data = (
+    input_data = [
         pregnancies,
         glucose,
         blood_pressure,
@@ -119,18 +123,16 @@ def predict_diabetes():
         bmi,
         dpf,
         age
-    )
+    ]
+    # Prediction using the loaded model
     input_df = pd.DataFrame([input_data], columns=feature_names)
-    # loaded_model = None
-    with open("./static/models/diabetes.pkl", "rb") as model:
-        loaded_model = pickle.load(model)
-    prediction = loaded_model.predict(input_df)
-    if prediction[0]==1:
+    scaled_input = loaded_scaler.transform(input_df)
+    prediction = loaded_model.predict(scaled_input)
+    if prediction[0] == 1:
         result = "The model predicts that you have diabetes."
-        return jsonify({"result": result})
     else:
         result = "The model predicts that you don't have diabetes."
-        return jsonify({"result": result})
+    return jsonify({"result": result})
 
 
 if __name__ == '__main__':
