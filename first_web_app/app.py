@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 import pickle
 
 
@@ -128,7 +127,7 @@ def predict_diabetes():
     input_df = pd.DataFrame([input_data], columns=feature_names)
     scaled_input = loaded_scaler.transform(input_df)
     prediction = loaded_model.predict(scaled_input)
-    if prediction[0] == 1:
+    if prediction[0]:
         result = "The model predicts that you have diabetes."
     else:
         result = "The model predicts that you don't have diabetes."
