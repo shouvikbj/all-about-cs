@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <!-- Google search: fontawesome cdn link -->
+     <!-- Result: https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h2>Form Page</h2>
+    <form action="/form" method="POST">
+        <label for="first-name">First Name *</label>
+        <br>
+        <input 
+            id="first-name"
+            type="text" 
+            placeholder="enter your first name"
+            name="first_name"
+            required
+        >
+        <br>
+        <br>
+        <label for="last-name">Last Name *</label>
+        <br>
+        <input 
+            id="last-name"
+            type="text" 
+            placeholder="enter your last name"
+            name="last_name"
+            required
+        >
+        <br>
+        <br>
+        <label for="email">Email ID</label>
+        <br>
+        <input
+            id="email-name"
+            type="email" 
+            placeholder="Enter your Email ID"
+            name="user_email"
+        >
+        <br>
+        <br>
+        <label for="dept">Dept Name</label>
+        <br>
+        <input
+            id="dept-name"
+            type="dept"
+            placeholder="Enter your Dept Name"
+            name="user_dept"
+        >
+        <br>
+        <br>
+        <label for="college">College Name</label>
+        <br>
+        <input
+            id="colg-name"
+            type="college"
+            placeholder="Enter your College Name"
+            name="user_colg"
+        >
+        <br>
+        <br>
+        <label for="password-field">Password *</label>
+        <br>
+        <input 
+            id="password-field" 
+            type="password" 
+            placeholder="enter password"
+            name="user_password"
+            required
+        >
+        <button 
+            id="view-password" 
+            type="button"
+            style="background-color:transparent; border:none"
+        >
+            <i class="fa-solid fa-eye"></i>
+        </button>
+        <br>
+        <br>
+        <button type="reset">Reset form</button>
+        <button type="submit">Enter Data</button>
+    </form>
+    <script type="text/javascript">
+        const passwordField = document.getElementById("password-field");
+        const viewPasswordButton = document.getElementById("view-password");
+        viewPasswordButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                viewPasswordButton.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            } else {
+                passwordField.type = "password";
+                viewPasswordButton.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            }
+        })
+    </script>
+</body>
+</html>
